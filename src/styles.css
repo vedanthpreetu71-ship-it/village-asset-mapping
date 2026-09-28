@@ -1,0 +1,72 @@
+export const initialAssets = [
+  {
+    id: 1,
+    name: 'Government Primary School',
+    category: 'School',
+    lat: 12.9716,
+    lng: 77.5946,
+    description: 'Primary education facility serving local children.',
+    status: 'Operational',
+    contact: '080-24567890'
+  },
+  {
+    id: 2,
+    name: 'Village Health Center',
+    category: 'Hospital',
+    lat: 12.9794,
+    lng: 77.5913,
+    description: 'Basic healthcare center with outpatient services.',
+    status: 'Operational',
+    contact: '080-22334455'
+  },
+  {
+    id: 3,
+    name: 'Main Water Tank',
+    category: 'Water Tank',
+    lat: 12.9658,
+    lng: 77.6011,
+    description: 'Main storage tank supplying drinking water to the village.',
+    status: 'Operational',
+    contact: 'Not available'
+  },
+  {
+    id: 4,
+    name: 'Village Road',
+    category: 'Road',
+    lat: 12.9672,
+    lng: 77.5867,
+    description: 'Key road connecting the village to the nearby town.',
+    status: 'Needs Repair',
+    contact: 'Gram Panchayat Office'
+  },
+  {
+    id: 5,
+    name: 'Community Hall',
+    category: 'Community Center',
+    lat: 12.9748,
+    lng: 77.6028,
+    description: 'Public gathering space used for meetings and events.',
+    status: 'Operational',
+    contact: 'Local administration'
+  },
+  {
+    id: 6,
+    name: 'Village Park',
+    category: 'Park',
+    lat: 12.9627,
+    lng: 77.5966,
+    description: 'Open park for recreation and public events.',
+    status: 'Operational',
+    contact: 'Not available'
+  },
+  {
+    id: 7,
+    name: 'Local Market',
+    category: 'Market',
+    lat: 12.9789,
+    lng: 77.6064,
+    description: 'Daily market for groceries and local products.',
+    status: 'Operational',
+    contact: 'Market committee'
+  }
+];
