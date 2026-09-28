@@ -1,72 +1,23 @@
-export const initialAssets = [
-  {
-    id: 1,
-    name: 'Government Primary School',
-    category: 'School',
-    lat: 12.9716,
-    lng: 77.5946,
-    description: 'Primary education facility serving local children.',
-    status: 'Operational',
-    contact: '080-24567890'
-  },
-  {
-    id: 2,
-    name: 'Village Health Center',
-    category: 'Hospital',
-    lat: 12.9794,
-    lng: 77.5913,
-    description: 'Basic healthcare center with outpatient services.',
-    status: 'Operational',
-    contact: '080-22334455'
-  },
-  {
-    id: 3,
-    name: 'Main Water Tank',
-    category: 'Water Tank',
-    lat: 12.9658,
-    lng: 77.6011,
-    description: 'Main storage tank supplying drinking water to the village.',
-    status: 'Operational',
-    contact: 'Not available'
-  },
-  {
-    id: 4,
-    name: 'Village Road',
-    category: 'Road',
-    lat: 12.9672,
-    lng: 77.5867,
-    description: 'Key road connecting the village to the nearby town.',
-    status: 'Needs Repair',
-    contact: 'Gram Panchayat Office'
-  },
-  {
-    id: 5,
-    name: 'Community Hall',
-    category: 'Community Center',
-    lat: 12.9748,
-    lng: 77.6028,
-    description: 'Public gathering space used for meetings and events.',
-    status: 'Operational',
-    contact: 'Local administration'
-  },
-  {
-    id: 6,
-    name: 'Village Park',
-    category: 'Park',
-    lat: 12.9627,
-    lng: 77.5966,
-    description: 'Open park for recreation and public events.',
-    status: 'Operational',
-    contact: 'Not available'
-  },
-  {
-    id: 7,
-    name: 'Local Market',
-    category: 'Market',
-    lat: 12.9789,
-    lng: 77.6064,
-    description: 'Daily market for groceries and local products.',
-    status: 'Operational',
-    contact: 'Market committee'
-  }
-];
+* { box-sizing: border-box; }
+:root { font-family: Inter, system-ui, sans-serif; color: #172033; background: #eef3f8; }
+body { margin: 0; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+.app-shell { min-height: 100vh; padding: 24px; }
+.topbar { max-width: 1500px; margin: 0 auto 18px; padding: 24px 28px; color: white; border-radius: 18px; background: linear-gradient(120deg, #123b62, #167b83); box-shadow: 0 8px 24px #123b6222; }
+.topbar h1 { margin: 4px 0 0; font-size: clamp(1.6rem, 3vw, 2.4rem); }
+.eyebrow { margin: 0; color: #8bd9d2; font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.main-layout { display: grid; grid-template-columns: minmax(250px, .8fr) minmax(420px, 1.7fr) minmax(270px, .9fr); gap: 18px; max-width: 1500px; min-height: 720px; margin: auto; }
+.panel { border: 1px solid #d9e1ea; border-radius: 16px; background: #fff; box-shadow: 0 8px 24px #29445e12; overflow: hidden; }
+.left-panel, .right-panel { padding: 18px; }
+.stats-grid { display: grid; gap: 9px; grid-template-columns: repeat(3, 1fr); }
+.stat-card { padding: 12px; border-radius: 10px; background: #edf4ff; color: #24528a; }
+.stat-card.green { background: #eaf8f0; color: #167344; }.stat-card.warning { background: #fff5df; color: #a26100; }
+.stat-card span, label { display: block; font-size: .75rem; font-weight: 700; color: #64748b; }.stat-card strong { display: block; margin-top: 5px; font-size: 1.5rem; }
+.filter-group { display: flex; flex-wrap: wrap; gap: 7px; margin: 18px 0; }.filter-btn { border: 1px solid #d6e0ea; border-radius: 999px; padding: 7px 10px; background: #fff; color: #526174; font-size: .78rem; }.filter-btn.active { border-color: #167b83; background: #167b83; color: #fff; }
+.list-panel { display: grid; gap: 8px; max-height: 535px; overflow: auto; }.asset-item { border: 1px solid #e1e8ef; border-radius: 10px; padding: 12px; text-align: left; background: #fff; }.asset-item:hover, .asset-item.selected { border-color: #167b83; background: #f0fbfa; }.asset-topline { display: flex; align-items: center; gap: 8px; }.dot { width: 9px; height: 9px; border-radius: 50%; }.asset-meta { display: block; margin: 5px 0 0 17px; color: #708096; font-size: .78rem; }
+.map-panel { min-height: 650px; }.leaflet-map { width: 100%; height: 100%; min-height: 720px; }.popup-card p { margin: 6px 0; }
+.right-panel h2 { margin: 7px 0 10px; font-size: 1.4rem; }.badge { display: inline-block; padding: 5px 9px; border-radius: 999px; color: white; font-size: .75rem; font-weight: 700; }.detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0; }.detail-grid p, .description-box p { margin: 4px 0; font-size: .88rem; }.description-box { border-radius: 10px; padding: 12px; background: #f4f7fa; }
+.asset-form { display: grid; gap: 11px; margin-top: 22px; padding-top: 18px; border-top: 1px solid #e1e8ef; }.asset-form h3 { margin: 0; }.asset-form input, .asset-form select, .asset-form textarea { width: 100%; margin-top: 5px; border: 1px solid #d5dee8; border-radius: 8px; padding: 9px; color: #172033; background: #fff; }.inline-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }.submit-btn { border: 0; border-radius: 8px; padding: 11px; background: #167b83; color: #fff; font-weight: 800; }.submit-btn:hover { background: #105f65; }
+@media (max-width: 1050px) { .main-layout { grid-template-columns: 1fr 1.4fr; }.right-panel { grid-column: 1 / -1; }.leaflet-map { min-height: 550px; } }
+@media (max-width: 700px) { .app-shell { padding: 10px; }.main-layout { display: flex; flex-direction: column; }.map-panel { order: -1; }.leaflet-map { min-height: 420px; }.stats-grid { grid-template-columns: 1fr 1fr; } }
